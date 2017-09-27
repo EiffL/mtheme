@@ -164,14 +164,16 @@
   \nointerlineskip%
   \begin{beamercolorbox}[%
       wd=\paperwidth,%
-      sep=0pt,%
+      sep=0pt,ignorebg,%
       leftskip=\metropolis@frametitle@padding,%
       rightskip=\metropolis@frametitle@padding,%
     ]{frametitle}%
+    \begin{tikzpicture}
+        \draw[bg, fill=bg, very thick,line cap=round] (0,0) -- (0.pt,14pt) node[midway, anchor=west] {
   \metropolis@frametitlestrut@start%
   \insertframetitle%
-  \nolinebreak%
-  \metropolis@frametitlestrut@end%
+  \metropolis@frametitlestrut@end};%
+  \end{tikzpicture}%
   \end{beamercolorbox}%
 }
 \setbeamertemplate{frametitle continuation}{%
